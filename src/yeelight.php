@@ -25,10 +25,25 @@ class Yeelight{
 		
 		} 
 
-		public function toggleBulb(){
-				$this->msgArray = array('id' => '1', 'method' => 'toggle', 'params' => '[]');
-				$this->run();
-		
+		public function action($actionArray){
+				switch($actionArray){
+					case strtolower($actionArray[0]) === "toggle":
+							$this->msgArray = array('id' => 1, 'method' => 'toggle', 'params' => '[]');
+							$this->run();
+							break;
+					
+					case strtolower($actionArray[0]) === "bright":
+							if(!is_numeric($actionArray[1])){
+								throw new Exepction("Brightness level is not numeric!");
+							} else {
+									$this->msgArray = array('id' => 1, 'method' => 'set_bright', 'params' => '['.$actionArray[1].']');
+									$this->run();
+
+							}
+							break;
+				}
+
+
 		}
 
 		protected function run(){
