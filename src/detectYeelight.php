@@ -10,7 +10,7 @@ class detectYeelight{
 		protected $tmp = null;
 		protected $resultArray;
 
-		public function searchDevices(){
+		public function searchBulbs(){
 				$this->socket = socket_create(AF_INET, SOCK_DGRAM, SOL_UDP);
 				socket_set_option($this->socket, SOL_SOCKET, SO_RCVTIMEO, array('sec'=> 15, 'usec'=>10000));
 				$this->socketSendResponse = socket_sendto($this->socket, $this->headers, 1024, 0, '239.255.255.250', '1982');
