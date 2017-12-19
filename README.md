@@ -49,4 +49,4 @@ $yeelight->action(array('bright', 1));
 
 This snippet will result into changing the brightness of you're yeelight bulb to 1%
 
-Currently there are only 2 modules available, bright & toggle. However, feel free to add more by yourself using the [yeelight developer guide](https://www.yeelight.com/download/Yeelight_Inter-Operation_Spec.pdf).
+Currently there are only 3 modules available, bright, toggle & cron_add. However, feel free to add more by yourself using the [yeelight developer guide](https://www.yeelight.com/download/Yeelight_Inter-Operation_Spec.pdf).
