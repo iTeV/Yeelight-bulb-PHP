@@ -41,6 +41,12 @@ class Yeelight{
 
 							}
 							break;
+					
+					case strtolower($actionArray[0]) === "cron_test":
+#							$this->msgArray = array('id' => 1, 'method' => 'cron_add', 'params' => '[0, 1]');	
+#							$this->run();
+							#							break;
+							$this->msgArray = array('id' => 1, 'method' => 'set_music', 'params' => '[1, "192.168.178.1", ]');
 				}
 
 
