@@ -42,11 +42,10 @@ class Yeelight{
 							}
 							break;
 					
-					case strtolower($actionArray[0]) === "cron_test":
-#							$this->msgArray = array('id' => 1, 'method' => 'cron_add', 'params' => '[0, 1]');	
-#							$this->run();
-							#							break;
-							$this->msgArray = array('id' => 1, 'method' => 'set_music', 'params' => '[1, "192.168.178.1", ]');
+					case strtolower($actionArray[0]) === "cron_add":
+							$this->msgArray = array('id' => 1, 'method' => 'cron_add', 'params' => '[0, 1]');	
+							$this->run();
+							break;
 				}
 
 
@@ -54,7 +53,7 @@ class Yeelight{
 
 		protected function run(){
 				if(fwrite($this->socket, json_encode($this->msgArray). "\r\n")){
-						echo "Executed successfully!";
+						echo "Executed ".$actionArray[0]." successfully!";
 						fclose($this->socket);
 				} else {
 					
